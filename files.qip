@@ -1,0 +1,14 @@
+set_global_assignment -name QIP_FILE rtl/psx.qip
+set_global_assignment -name QIP_FILE rtl/mem.qip
+set_global_assignment -name QIP_FILE rtl/pll2.qip
+set_global_assignment -name SYSTEMVERILOG_FILE rtl/sdram.sv
+set_global_assignment -name SYSTEMVERILOG_FILE rtl/ddram.sv
+set_global_assignment -name SYSTEMVERILOG_FILE rtl/ddram_rotate_arb.sv
+set_global_assignment -name SYSTEMVERILOG_FILE rtl/savestate_ui.sv
+set_global_assignment -name VERILOG_FILE rtl/hps_ext.v
+# NOTE: the sound-board RTL (Capcom QSound / Taito Zoom / Taito FX-1A YM2610B) is NOT listed
+# here. Those files are added per-variant by the ZN1_<variant>.qsf revision files so that a
+# board which is not selected consumes ~0 ALM (compiled out via `ifdef, not tied off).
+# See VARIANTS.md.
+set_global_assignment -name SDC_FILE ZN1.sdc
+set_global_assignment -name SYSTEMVERILOG_FILE ZN1.sv
